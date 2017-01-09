@@ -1,3 +1,15 @@
 chrome.browserAction.onClicked.addListener(function() {
-    chrome.tabs.executeScript(null, {file: "content_script.js"});
+    chrome.tabs.executeScript(null, {file: "scrapeItems.js"}, ([scrapedPage]) => {
+      const createProperties = {
+        url: 'https://onemanclapping.github.io/ezdigger'
+      }
+
+      chrome.tabs.create(createProperties, (tab) => {
+        chrome.runtime.onMessageExternal.addListener((message, sender, sendResponse) => {
+            if (message === 'diggerReady') {
+                sendResponse({scrapedPage})
+            }
+        });
+      })
+    });
 });
