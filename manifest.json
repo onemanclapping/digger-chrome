@@ -1,6 +1,6 @@
 {
-    "name": "ezDigger",
-    "description": "ezDigger",
+    "name": "digger",
+    "description": "digger",
     "version": "0.0.1",
     "background": {
         "scripts": ["background.js"],
@@ -10,10 +10,10 @@
         "https://www.discogs.com/*"
     ],
     "browser_action": {
-        "default_title": "ezDigger"
+        "default_title": "digger"
     },
     "manifest_version": 2,
     "externally_connectable": {
-        "matches": ["https://onemanclapping.github.io/ezdigger/*"]
+        "matches": ["https://onemanclapping.github.io/digger/*"]
     }
 }

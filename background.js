@@ -1,7 +1,7 @@
 chrome.browserAction.onClicked.addListener(function() {
     chrome.tabs.executeScript(null, {file: "scrapeItems.js"}, ([scrapedPage]) => {
       const createProperties = {
-        url: 'https://onemanclapping.github.io/ezdigger'
+        url: 'https://onemanclapping.github.io/digger'
       }
 
       chrome.tabs.create(createProperties, (tab) => {
